@@ -16,7 +16,7 @@ pip install -r requirements.txt
 ```
 
 ### 2.2 Dataset
-sss
+
 ## 3. Usage
 
 ### 3.1 Preprocessing
@@ -24,5 +24,3 @@ sss
 ### 3.2 Pre-training
 
 ### 3.3 Fine-tuning
-
-## Citation
