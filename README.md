@@ -37,7 +37,7 @@ export PYTHON PATH="${PYTHONPATH}:./"
 If you are in Windows, you can add the lambert root path to the python environment variable by hand.
 
 ## 3. Dataset
-### 3.2 Original Dataset
+### 3.1 Original Dataset
 | Dataset          | Packet | Label |
 |------------------|--------|-------|
 | ISCX-VPN-Service | 60000  | 12    |
@@ -48,7 +48,7 @@ If you are in Windows, you can add the lambert root path to the python environme
 2. [USTC-TFC](https://drive.google.com/file/d/1F09zxln9iFg2HWoqc6m4LKFhYK7cDQv_/view?usp=sharing)
 3. [CSTNET-TLS1.3](https://drive.google.com/drive/folders/1is609sosAdqf9YJAfwr72hBqM4OeNuZq?usp=sharing)
 4. Or you can also prepare your own datasets.
-### 3.3 Processed Dataset
+### 3.2 Processed Dataset
 `Note:` The original traffic data needs to be preprocessed, and the preprocessing part is consistent with [ET-BERT](https://github.com/linwhitehat/ET-BERT)
 
 After processing the data into the datasets folder, the file tree example is as follows:
