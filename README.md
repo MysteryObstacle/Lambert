@@ -6,7 +6,7 @@
 ## 1. Introduction
 Fine-tuning is an important part of a pre-training based approach. 
 LAMBERT a novel fine-tuning model, which leverages its unique attention mechanisms to improve sequence loss. 
-This improvement was particularly pronounced on untrained datasets.
+This improvement is particularly evident on datasets that have not been pre-trained.
 
 ## 2. Preparation
 ### 2.1 Clone the repository
