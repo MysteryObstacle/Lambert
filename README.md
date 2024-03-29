@@ -104,10 +104,12 @@ python fine-tuning/lambert.py \
 ```
 ### 3.3 Inference
 ```bash
-python inference/infer.py --load_model_path output/lambert/lambert.bin \
+python inference/infer.py \
+    --classifier_file fine-tuning/lambert.py \
+    --classifier_name Lambert \
+    --load_model_path output/lambert/lambert.bin \
+    --test_path datasets/ustc-tfc/packet/test_dataset.tsv \
+    --prediction_path output/lambert/infer.tsv \
     --vocab_path models/encryptd_vocab.txt \
-    --test_path datasets/ustc-tfc/packet/nolabel_test_dataset.tsv \
-    --prediction_path datasets/ustc-tfc/packet/prediction.tsv \
-    --labels_num 20 \
     --embedding word_pos_seg --encoder transformer --mask fully_visible
 ```
