@@ -1,7 +1,7 @@
 # Lambert🐣
 **L**everaging **A**ttention **M**echanisms to improve the **BERT** fine-tuning model for encrypted traffic classification.
 
-![](\img\LAMBERT.svg)
+![](./img/LAMBERT.svg)
 
 `Note:` This code is based on [UER-py](https://github.com/dbiir/UER-py) and [ET-BERT](https://github.com/linwhitehat/ET-BERT)
 
