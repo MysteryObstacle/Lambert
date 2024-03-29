@@ -32,7 +32,7 @@ If you are in Linux, you can do this:
 ```bash
 export PYTHON PATH="${PYTHONPATH}:./"
 ```
-If you are in Windows, you can add the path to the python environment variable by hand.
+If you are in Windows, you can add the lambert root path to the python environment variable by hand.
 
 ## 3. Dataset
 ### 3.2 Original Dataset
