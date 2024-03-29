@@ -1,6 +1,7 @@
 # Lambert🐣
 **L**everaging **A**ttention **M**echanisms to improve the **BERT** fine-tuning model for encrypted traffic classification
-
+[lambert](img/lambert.png)
+![](\img\LAMBERT.svg)
 `Note:` This code is based on [UER-py](https://github.com/dbiir/UER-py) and [ET-BERT](https://github.com/linwhitehat/ET-BERT)
 
 ## 1. Introduction
@@ -81,18 +82,17 @@ After processing the data into the datasets folder, the file tree example is as 
 ### 3.2 Pre-training
 ```bash
 python pre-training/pretrain.py --dataset_path dataset.pt --vocab_path models/encryptd_vocab.txt \
-                       --output_model_path models/pre-trained_model.bin \
-                       --world_size 8 --gpu_ranks 0 1 2 3 4 5 6 7 \
-                       --total_steps 500000 --save_checkpoint_steps 10000 --batch_size 32 \
-                       --embedding word_pos_seg --encoder transformer --mask fully_visible --target bert
+    --output_model_path models/pre-trained_model.bin \
+     --world_size 8 --gpu_ranks 0 1 2 3 4 5 6 7 \
+    --total_steps 500000 --save_checkpoint_steps 10000 --batch_size 32 \
+    --embedding word_pos_seg --encoder transformer --mask fully_visible --target bert
 ```
-
 ### 3.3 Fine-tuning
 ```bash
 python fine-tuning/lambert.py \
     --pretrained_model_path models/pre-trained_model.bin \
-    --output_model_path output/lambert/lambert_ustc-tfc_20epoch.bin \
-    --evaluate_output_path output/lambert/lambert_ustc-tfc_20epoch.txt \
+    --output_model_path output/lambert/lambert.bin \
+    --evaluate_output_path output/lambert/lambert.txt \
     --vocab_path models/encryptd_vocab.txt \
     --train_path datasets/ustc-tfc/packet/train_dataset.tsv \
     --dev_path datasets/ustc-tfc/packet/valid_dataset.tsv \
@@ -101,5 +101,12 @@ python fine-tuning/lambert.py \
     --encoder transformer --mask fully_visible \
     --seq_length 128 --learning_rate 2e-5
 ```
-
 ### 3.4 Inference
+```bash
+python inference/infer.py --load_model_path output/lambert/lambert.bin \
+    --vocab_path models/encryptd_vocab.txt \
+    --test_path datasets/ustc-tfc/packet/nolabel_test_dataset.tsv \
+    --prediction_path datasets/ustc-tfc/packet/prediction.tsv \
+    --labels_num 20 \
+    --embedding word_pos_seg --encoder transformer --mask fully_visible
+```
