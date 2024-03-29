@@ -12,6 +12,8 @@ git clone https://github.com/MysteryObstacle/Lambert.git
 conda create -n LAMBERT python=3.8.16
 conda activate LAMBERT
 
+pip install torch==2.2.0 torchvision==0.17.0 torchaudio==2.2.0 --index-url https://download.pytorch.org/whl/cu121
+
 pip install -r requirements.txt
 ```
 
@@ -24,3 +26,5 @@ pip install -r requirements.txt
 ### 3.2 Pre-training
 
 ### 3.3 Fine-tuning
+
+### 3.4 Inference
