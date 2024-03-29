@@ -80,7 +80,7 @@ After processing the data into the datasets folder, the file tree example is as 
 ```
 
 ## 3. Usage
-### 3.2 Pre-training
+### 3.1 Pre-training
 ```bash
 python pre-training/pretrain.py --dataset_path dataset.pt --vocab_path models/encryptd_vocab.txt \
     --output_model_path models/pre-trained_model.bin \
@@ -88,7 +88,7 @@ python pre-training/pretrain.py --dataset_path dataset.pt --vocab_path models/en
     --total_steps 500000 --save_checkpoint_steps 10000 --batch_size 32 \
     --embedding word_pos_seg --encoder transformer --mask fully_visible --target bert
 ```
-### 3.3 Fine-tuning
+### 3.2 Fine-tuning
 ```bash
 python fine-tuning/lambert.py \
     --pretrained_model_path models/pre-trained_model.bin \
@@ -102,7 +102,7 @@ python fine-tuning/lambert.py \
     --encoder transformer --mask fully_visible \
     --seq_length 128 --learning_rate 2e-5
 ```
-### 3.4 Inference
+### 3.3 Inference
 ```bash
 python inference/infer.py --load_model_path output/lambert/lambert.bin \
     --vocab_path models/encryptd_vocab.txt \
