@@ -1,5 +1,4 @@
 # Lambert🐣
-**L**everaging **A**ttention **M**echanisms to improve the **BERT** fine-tuning model for encrypted traffic classification.
 
 ![](./img/LAMBERT.svg)
 
